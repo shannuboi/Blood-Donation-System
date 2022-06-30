@@ -123,11 +123,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BloodBank.h" />
     <ClInclude Include="BloodType.h" />
+    <ClInclude Include="Database.h" />
+    <ClInclude Include="Donor.h" />
+    <ClInclude Include="Person.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BloodBank.cpp" />
     <ClCompile Include="BloodType.cpp" />
+    <ClCompile Include="Donor.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

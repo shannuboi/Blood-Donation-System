@@ -95,3 +95,31 @@ bool BloodType::DonationPossible(BloodType donor, BloodType recp)
 
 	return false;
 }
+
+std::ostream & operator<<(std::ostream & os, const BloodType & b)
+{
+	os << ", Blood type: "; 
+	switch (b.group)
+	{
+	case BloodType::Group::O:
+		os << "O";
+		break;
+
+	case BloodType::Group::A:
+		os << "A";
+		break;
+
+	case BloodType::Group::B:
+		os << "B";
+		break;
+	
+	case BloodType::Group::AB:
+		os << "AB";
+		break;
+	}
+
+	if (b.rhfactor == BloodType::RHfactor::plus) os << "+";
+	else os << "-";
+
+	return os;
+}
