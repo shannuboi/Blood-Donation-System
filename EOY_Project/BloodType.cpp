@@ -1,4 +1,5 @@
 #include "BloodType.h"
+#include "GUI.h"
 
 BloodType::BloodType(Group group, RHfactor rhfactor)
 	:
@@ -122,4 +123,40 @@ std::ostream & operator<<(std::ostream & os, const BloodType & b)
 	else os << "-";
 
 	return os;
+}
+
+std::istream & operator>>(std::istream & is, BloodType & b)
+{
+	std::string buff;
+	std::string validChoices[] =
+	{ "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-" };
+
+	bool Invalid = true;
+
+	while (Invalid)
+	{
+		is >> buff;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		for (int i = 0; i < sizeof(validChoices); i++)
+		{
+			if (buff == validChoices[i]) Invalid = false;
+		}
+
+		if (Invalid)
+		{
+			std::cout << "Please Enter a valid input\n";
+		}
+	}
+	
+	if (buff == "O+") { b.group = BloodType::Group::O; b.rhfactor = BloodType::RHfactor::plus; }
+	else if (buff == "O-") { b.group = BloodType::Group::O; b.rhfactor = BloodType::RHfactor::minus; }
+	else if (buff == "A+") { b.group = BloodType::Group::A; b.rhfactor = BloodType::RHfactor::plus; }
+	else if (buff == "A-") { b.group = BloodType::Group::A; b.rhfactor = BloodType::RHfactor::minus; }
+	else if (buff == "B+") { b.group = BloodType::Group::B; b.rhfactor = BloodType::RHfactor::plus; }
+	else if (buff == "B-") { b.group = BloodType::Group::B; b.rhfactor = BloodType::RHfactor::minus; }
+	else if (buff == "AB+") { b.group = BloodType::Group::AB; b.rhfactor = BloodType::RHfactor::plus; }
+	else if (buff == "AB-") { b.group = BloodType::Group::AB; b.rhfactor = BloodType::RHfactor::minus; }
+
+	return is;
 }
