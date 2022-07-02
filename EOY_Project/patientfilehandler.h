@@ -14,6 +14,6 @@ using namespace std;
 class patientfilehandler : public filehandler{
 public:    
     patientfilehandler(string fname);
-    void createpatient(string Pname, string Paddress, string Pcontact, string Pbloodtype, string Pdisease,string Pid, string Did,string Dname, string Dbloodbank);
+    void createpatient(string Pid, string Pname, string Paddress, string Pcontact, string Pbloodtype, string Pdisease, string Did);
 };
 #endif

@@ -8,6 +8,7 @@
 #include <sstream>
 #include <string>
 #include <cstring>
+#include "Donor.h"
 
 using namespace std;
 
@@ -15,7 +16,6 @@ class donorfilehandler : public filehandler{
 public:    
     donorfilehandler(string fname);
     void createdonor(string Dname,string Daddress,string Dcontact,string Dbloodtype,string Dbloodbank,string Did,string Available);
-
 };
 
 #endif

@@ -1,11 +1,17 @@
 #include "Person.h"
+#include "patientfilehandler.h"
  
 class Patient : public Person
 {
+	std::string address;
+	std::string contactNo;
     std::string disease;
-    
+	patientfilehandler fhandler;
+
 public:
-	Patient() = default;
+	Patient();
     Patient(Person Person, std::string disease);
+	void setaddress(std::string a);
+	void setcontactno(std::string c);
     void setdisease(std::string d);
 };

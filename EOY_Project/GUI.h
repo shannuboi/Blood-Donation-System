@@ -29,7 +29,7 @@ public:
 	void Go();
 private:
 	Patient p;
-
+	donorfilehandler dfile = donorfilehandler("Donor_data.csv");
 };
 
 class DonorGUI

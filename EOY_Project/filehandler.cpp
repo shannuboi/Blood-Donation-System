@@ -22,7 +22,6 @@ void filehandler::read_record_bysearch(string tofind)
     {
         string line;
         getline(myfile, line, ',');
-        std::ifstream input(filename );
 
     for( std::string line; getline( myfile, line ); )
     {
@@ -32,7 +31,7 @@ void filehandler::read_record_bysearch(string tofind)
     }
     }
 }
-
+/*
 void filehandler::read_record_byid(){
 
 ////Not Complete
@@ -45,7 +44,7 @@ void filehandler::read_record_byid(){
 	fin.open("database.csv", ios::in);
 
 
-	int ID, id1, marks, count = 0, i;
+	int ID, id1, count = 0;
 	string line, word, temp;
 	vector<string> row;
 
@@ -96,7 +95,7 @@ void filehandler::read_record_byid(){
 	// Close the pointers
 	fin.close();
 }
-
+*/
 void filehandler::delete_record(int ID)
 {
 
@@ -109,7 +108,7 @@ void filehandler::delete_record(int ID)
 	// Create a new file to store the non-deleted data
 	fout.open("temp.csv", ios::out);
 
-	int id1, marks, count = 0, i;
+	int id1, count = 0, i;
 	string line, word;
 	vector<string> row;
 
@@ -121,6 +120,8 @@ void filehandler::delete_record(int ID)
 
 		row.clear();
 		getline(fin, line);
+		if (line.size() == 0) break;
+
 		stringstream s(line);
 
 		while (getline(s, word, ',')) {

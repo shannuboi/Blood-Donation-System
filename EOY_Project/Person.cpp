@@ -2,7 +2,7 @@
 
 Person::Person()
 	:
-	name("lol"), ID(123), bloodtype(BloodType::Group::B, BloodType::RHfactor::plus)
+	name("lol"), ID("123"), bloodtype(BloodType::Group::B, BloodType::RHfactor::plus)
 {
 }
 
@@ -11,7 +11,7 @@ std::string Person::GetName() const
 	return name;
 }
 
-int Person::GetID() const
+std::string Person::GetID() const
 {
 	return ID;
 }

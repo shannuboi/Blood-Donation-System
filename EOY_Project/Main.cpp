@@ -16,6 +16,6 @@ int main()
 	if (input == 'a') adminGUI.Go();
 	else if (input == 'p') patientGUI.Go();
 	else donorGUI.Go();
-
+	
 	return 0;
 }

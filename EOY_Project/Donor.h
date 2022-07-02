@@ -1,9 +1,10 @@
-#ifndef DONOR
-#define DONOR
+#ifndef DONOR_h
+#define DONOR_h
 
 #include "Person.h"
 #include "MedicalReport.h"
 #include <iostream>
+#include "donorfilehandler.h"
 
 class Donor : public Person
 {

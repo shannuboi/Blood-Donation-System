@@ -4,13 +4,12 @@ using namespace std;
 
 void PatientGUI::Go()
 {
-	string n;
+	string buffer;
 	int i;
-	string d;
 
 	cout << "Please enter your name: ";
-	GeneralGUI::GetInput(n);
-	p.setname(n);
+	GeneralGUI::GetInput(buffer);
+	p.setname(buffer);
 
 	cout << "Please enter your id: ";
 	cin >> i;
@@ -18,8 +17,52 @@ void PatientGUI::Go()
 
 	cout << "Please enter your blood type: ";
 	p.Inputbloodtype();
+	
+	cout << "Please enter your address: ";
+	GeneralGUI::GetInput(buffer);
+	p.setaddress(buffer);
+	
+	cout << "Please enter your contact No.: ";
+	GeneralGUI::GetInput(buffer);
+	p.setcontactno(buffer);
 
 	cout << "Please enter any of your deseases: ";
-	GeneralGUI::GetInput(d);
-	p.setdisease(d);
+	GeneralGUI::GetInput(buffer);
+	p.setdisease(buffer);
+
+	if (BloodType::DonationPossible(BloodType::Oplus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_O+");
+	}
+	if (BloodType::DonationPossible(BloodType::Ominus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_O-");
+	}
+
+	if (BloodType::DonationPossible(BloodType::Aplus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_A+");
+	}
+	if (BloodType::DonationPossible(BloodType::Aminus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_A-");
+	}
+
+	if (BloodType::DonationPossible(BloodType::Bplus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_B+");
+	}
+	if (BloodType::DonationPossible(BloodType::Bminus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_B-");
+	}
+
+	if (BloodType::DonationPossible(BloodType::ABplus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_AB+");
+	}
+	if (BloodType::DonationPossible(BloodType::ABminus(), p.GetBloodType()))
+	{
+		dfile.read_record_bysearch("_AB-");
+	}
 }

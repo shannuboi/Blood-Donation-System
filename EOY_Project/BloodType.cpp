@@ -62,12 +62,12 @@ bool BloodType::DonationPossible(BloodType donor, BloodType recp)
 					// Recipient: B+ or AB+
 					return true;
 				}
-				else
-				{
-					// Donor: B-
-					// Recipient: B+, B-, Ab+, Ab-
-					return true;
-				}
+			}
+			else
+			{
+				// Donor: B-
+				// Recipient: B+, B-, Ab+, Ab-
+				return true;
 			}
 		}
 		break;
@@ -95,6 +95,45 @@ bool BloodType::DonationPossible(BloodType donor, BloodType recp)
 	}
 
 	return false;
+}
+
+BloodType BloodType::Oplus()
+{
+	return BloodType(Group::O, RHfactor::plus);
+}
+
+BloodType BloodType::Ominus()
+{
+	return BloodType(Group::O, RHfactor::minus);
+}
+
+BloodType BloodType::Aplus()
+{
+	return BloodType(Group::A, RHfactor::plus);
+}
+
+BloodType BloodType::Aminus()
+{
+	return BloodType(Group::A, RHfactor::minus);
+}
+
+BloodType BloodType::Bplus()
+{
+	return BloodType(Group::B, RHfactor::plus);
+}
+
+BloodType BloodType::Bminus()
+{
+	return BloodType(Group::B, RHfactor::minus);
+}
+BloodType BloodType::ABplus()
+{
+	return BloodType(Group::AB, RHfactor::plus);
+}
+
+BloodType BloodType::ABminus()
+{
+	return BloodType(Group::AB, RHfactor::minus);
 }
 
 std::ostream & operator<<(std::ostream & os, const BloodType & b)
