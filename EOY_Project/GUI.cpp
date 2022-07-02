@@ -22,3 +22,10 @@ void GeneralGUI::GetInput(char * validChoices, int nChoices, char & storeTo)
 	}
 }
 
+void GeneralGUI::GetInput(std::string&  storeTo)
+{
+	std::cin >> storeTo;
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+

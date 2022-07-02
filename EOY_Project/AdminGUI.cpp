@@ -1,20 +1,26 @@
 #include "GUI.h"
 using namespace std;
 
-AdminGUI::AdminGUI() : password("2646") {};
+AdminGUI::AdminGUI() : password("5040") {};
 
-bool AdminGUI::password_check(std::string p)
+bool AdminGUI::password_check()
 {
-	while (true) {
-		if (p != password)
+	string pass;
+
+	while (true)
+	{
+		GeneralGUI::GetInput(pass);
+		if (pass == "quit")
 		{
-			cout << "Invalid password";
-			cin >> p;
-			return  false;
+			return false;
+		}
+		else if (pass != password)
+		{
+			cout << "Invalid password (Type \"quit\" to Exit)\n";
 		}
 		else
 		{
-			return  true;
+			return true;
 		}
 	}
 }
@@ -22,13 +28,9 @@ bool AdminGUI::password_check(std::string p)
 
 void AdminGUI::Go()
 {
-	string pass;
 	cout << "Please enter the password to access files as an admin: ";
-	cin >> pass;
-	if (password_check(pass))
+	if (password_check())
 	{
-		cout << "Password check successful. You have access to files now.";
-
+		cout << "Password check successful. You have access to files now.\n";
 	}
-
 }

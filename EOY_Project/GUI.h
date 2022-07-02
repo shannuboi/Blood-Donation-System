@@ -9,6 +9,7 @@
 namespace GeneralGUI
 {
 	void GetInput(char* validChoices, int nChoices, char& storeTo);
+	void GetInput(std::string& storeTo);
 }
 
 
@@ -16,7 +17,7 @@ class AdminGUI
 {
 public:
 	AdminGUI();
-	bool password_check(std::string p);
+	bool password_check();
 	void Go();
 private:
 	const std::string password;
