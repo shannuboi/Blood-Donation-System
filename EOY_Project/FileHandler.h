@@ -1,12 +1,25 @@
-#pragma once
+#ifndef FILEHANDLER_H
+#define FILEHANDLER_H
 
-#include <string>
+#include <iostream>
 #include <fstream>
+#include <vector>
+#include <sstream>
+#include <string>
+#include <cstring>
 
-class FileHandler
-{
+class filehandler{
 public:
-	FileHandler(std::string FileName);
-private:
+    std::string filename;
+
+void setfilename(std::string name);
+
+std::string getfilename();
+void read_record_bysearch(std::string tofind);
+void read_record_byid();
+void delete_record(int ID);
 
 };
+#endif
+
+

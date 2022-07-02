@@ -45,6 +45,18 @@
     <ClCompile Include="Patient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MedicalReport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filehandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="donorfilehandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="patientfilehandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BloodType.h">
@@ -65,10 +77,19 @@
     <ClInclude Include="GUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileHandler.h">
+    <ClInclude Include="Patient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Patient.h">
+    <ClInclude Include="MedicalReport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="filehandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="donorfilehandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patientfilehandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
