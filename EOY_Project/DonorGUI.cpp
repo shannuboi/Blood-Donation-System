@@ -25,4 +25,6 @@ void DonorGUI::Go()
 	cout << "Please enter your contact number: ";
 	GeneralGUI::GetInput(c);
 	d.setcontactno(c);
+
+	cout << "Please enter some details about your medical report here\n";
 }

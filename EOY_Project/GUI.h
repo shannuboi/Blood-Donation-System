@@ -40,6 +40,6 @@ private:
 	Donor d;
 };
 
-#endif // !
+#endif
 
 

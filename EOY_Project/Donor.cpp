@@ -21,6 +21,11 @@ void Donor::setcontactno(std::string c)
 	contactNo = c;
 }
 
+void Donor::setmedrep(MedicalReport mr)
+{
+	medRep = mr;
+}
+
 std::ostream & operator<<(std::ostream & os, const Donor & d)
 {
 	const Person * p = &d;

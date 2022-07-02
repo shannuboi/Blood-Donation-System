@@ -19,4 +19,7 @@ void PatientGUI::Go()
 	cout << "Please enter your blood type: ";
 	p.Inputbloodtype();
 
+	cout << "Please enter any of your deseases: ";
+	GeneralGUI::GetInput(d);
+	p.setdisease(d);
 }
