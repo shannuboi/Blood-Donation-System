@@ -1,3 +1,6 @@
+#ifndef PERSON
+#define PERSON
+
 #include "BloodType.h"
 #include <string>
 #include <iostream>
@@ -15,3 +18,5 @@ private:
 	int ID;
 	BloodType bloodtype;
 };
+
+#endif // !PERSON

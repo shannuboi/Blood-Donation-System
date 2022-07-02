@@ -3,7 +3,5 @@
 
 int main()
 {
-	BloodBank b;
-	b.DisplayAllDonorData();
 	return 0;
 }
