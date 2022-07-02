@@ -11,6 +11,16 @@ BloodType Donor::GetBloodType() const
 	return Person::GetBloodType();
 }
 
+void Donor::setaddress(std::string a)
+{
+	Address = a;
+}
+
+void Donor::setcontactno(std::string c)
+{
+	contactNo = c;
+}
+
 std::ostream & operator<<(std::ostream & os, const Donor & d)
 {
 	const Person * p = &d;

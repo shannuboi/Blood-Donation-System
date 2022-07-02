@@ -138,7 +138,7 @@ std::istream & operator>>(std::istream & is, BloodType & b)
 		is >> buff;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		for (int i = 0; i < sizeof(validChoices); i++)
+		for (int i = 0; i < sizeof(validChoices)/sizeof(std::string); i++)
 		{
 			if (buff == validChoices[i]) Invalid = false;
 		}

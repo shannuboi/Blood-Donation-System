@@ -16,6 +16,21 @@ int Person::GetID() const
 	return ID;
 }
 
+void Person::setname(std::string n)
+{
+	name = n;
+}
+
+void Person::setID(int i)
+{
+	ID = i;
+}
+
+void Person::Inputbloodtype()
+{
+	std::cin >> bloodtype;
+}
+
 BloodType Person::GetBloodType() const
 {
 	return bloodtype;

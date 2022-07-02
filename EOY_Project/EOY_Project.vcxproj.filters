@@ -33,6 +33,18 @@
     <ClCompile Include="GUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PatientGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DonorGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Patient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BloodType.h">
@@ -54,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Patient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

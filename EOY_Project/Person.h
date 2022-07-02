@@ -11,6 +11,9 @@ public:
 	Person();
 	std::string GetName() const;
 	int GetID() const;
+	void setname(std::string n);
+	void setID(int i);
+	void Inputbloodtype();
 	BloodType GetBloodType() const;
 	friend std::ostream& operator << (std::ostream& os, const Person &p);
 private:
