@@ -5,15 +5,14 @@ using namespace std;
 void PatientGUI::Go()
 {
 	string buffer;
-	int i;
 
 	cout << "Please enter your name: ";
 	GeneralGUI::GetInput(buffer);
 	p.setname(buffer);
 
 	cout << "Please enter your id: ";
-	cin >> i;
-	p.setID(i);
+	GeneralGUI::GetInput(buffer);
+	p.setID(buffer);
 
 	cout << "Please enter your blood type: ";
 	p.Inputbloodtype();
@@ -30,6 +29,7 @@ void PatientGUI::Go()
 	GeneralGUI::GetInput(buffer);
 	p.setdisease(buffer);
 
+	cout << "\nHere is data for all donors\n";
 	if (BloodType::DonationPossible(BloodType::Oplus(), p.GetBloodType()))
 	{
 		dfile.read_record_bysearch("_O+");
@@ -65,4 +65,8 @@ void PatientGUI::Go()
 	{
 		dfile.read_record_bysearch("_AB-");
 	}
+
+	cout << "\nPlease enter the ID of the Donor you'd like to recieve data from: ";
+	GeneralGUI::GetInput(buffer);
+	dfile.read_record_bysearch(buffer);
 }

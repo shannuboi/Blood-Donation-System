@@ -23,79 +23,15 @@ void filehandler::read_record_bysearch(string tofind)
         string line;
         getline(myfile, line, ',');
 
-    for( std::string line; getline( myfile, line ); )
-    {
-        if (line.find(tofind) != std::string::npos) {
-            std::cout << line << endl;
-    }
-    }
+		for( std::string line; getline( myfile, line ); )
+		{
+			if (line.find(tofind) != std::string::npos) {
+				std::cout << line << endl;
+			}
+		}
     }
 }
-/*
-void filehandler::read_record_byid(){
 
-////Not Complete
-
-
-    // Open FIle pointers
-	fstream fin;
-
-	// Open the existing file
-	fin.open("database.csv", ios::in);
-
-
-	int ID, id1, count = 0;
-	string line, word, temp;
-	vector<string> row;
-
-	// Get the roll number
-	// to decide the data to be deleted
-	cout << "Enter the ID of the record to be displayed: ";
-	cin >> ID;
-
-	// Check if this record exists
-	// If exists, leave it and
-	// add all other data to the new file
-	while (fin >> temp) {
-
-		row.clear();
-		getline(fin, line);
-		stringstream s(line);
-
-		while (getline(s, word, ',')) {
-			row.push_back(word);
-		}
-
-		id1 = std::stoi(row[0]);
-
-		// writing all records,
-		// except the record to be deleted,
-		// into the new file 'reportcardnew.csv'
-		// using fout pointer
-		if (id1 = ID) {
-            count = 1;
-            cout << "Details of Roll " << row[0] << " : \n";
-            cout << "Name: " << row[1] << "\n";
-            cout << "Maths: " << row[2] << "\n";
-            cout << "Physics: " << row[3] << "\n";
-            cout << "Chemistry: " << row[4] << "\n";
-            cout << "Biology: " << row[5] << "\n";
-            cout<<count<<endl;
-            
-		}
-		if (fin.eof())
-        {
-            count = 1;
-			break;
-        }
-	}
-	if (count == 1)
-		cout << "Record not found\n";
-
-	// Close the pointers
-	fin.close();
-}
-*/
 void filehandler::delete_record(int ID)
 {
 

@@ -16,7 +16,6 @@ void setfilename(std::string name);
 
 std::string getfilename();
 void read_record_bysearch(std::string tofind);
-void read_record_byid();
 void delete_record(int ID);
 
 };

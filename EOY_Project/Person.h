@@ -12,7 +12,7 @@ public:
 	std::string GetName() const;
 	std::string GetID() const;
 	void setname(std::string n);
-	void setID(int i);
+	void setID(std::string i);
 	void Inputbloodtype();
 	BloodType GetBloodType() const;
 	friend std::ostream& operator << (std::ostream& os, const Person &p);

@@ -12,17 +12,6 @@ namespace GeneralGUI
 	void GetInput(std::string& storeTo);
 }
 
-
-class AdminGUI
-{
-public:
-	AdminGUI();
-	bool password_check();
-	void Go();
-private:
-	const std::string password;
-};
-
 class PatientGUI
 {
 public:

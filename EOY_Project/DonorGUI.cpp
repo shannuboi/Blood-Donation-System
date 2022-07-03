@@ -4,27 +4,27 @@ using namespace std;
 
 void DonorGUI::Go()
 {
-	string n, a, c;
-	int i;
+	string buffer;
 
 	cout << "Please enter your name: ";
-	GeneralGUI::GetInput(n);
-	d.setname(n);
+	GeneralGUI::GetInput(buffer);
+	d.setname(buffer);
 
 	cout << "Please enter your id: ";
-	cin >> i;
-	d.setID(i);
+	GeneralGUI::GetInput(buffer);
+	d.setID(buffer);
 
 	cout << "Please enter your bloodtype: ";
 	d.Inputbloodtype();
 
 	cout << "Please enter your address: ";
-	GeneralGUI::GetInput(a);
-	d.setaddress(a);
+	GeneralGUI::GetInput(buffer);
+	d.setaddress(buffer);
 
 	cout << "Please enter your contact number: ";
-	GeneralGUI::GetInput(c);
-	d.setcontactno(c);
+	GeneralGUI::GetInput(buffer);
+	d.setcontactno(buffer);
 
 	cout << "Please enter some details about your medical report here\n";
+
 }

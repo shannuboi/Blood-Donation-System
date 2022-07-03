@@ -136,7 +136,6 @@
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdminGUI.cpp" />
     <ClCompile Include="BloodBank.cpp" />
     <ClCompile Include="BloodType.cpp" />
     <ClCompile Include="Donor.cpp" />

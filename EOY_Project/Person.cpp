@@ -21,7 +21,7 @@ void Person::setname(std::string n)
 	name = n;
 }
 
-void Person::setID(int i)
+void Person::setID(std::string i)
 {
 	ID = i;
 }
