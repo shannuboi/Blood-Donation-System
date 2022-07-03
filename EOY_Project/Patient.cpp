@@ -28,3 +28,8 @@ void Patient::setdisease(string d)
 {
     disease = d;
 }
+
+void Patient::AddToFile(std::string donorID)
+{
+	fhandler.createpatient(GetID(), GetName(), address, contactNo, GetBloodType().GetString(), disease, donorID);
+}

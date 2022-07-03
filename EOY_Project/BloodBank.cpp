@@ -3,8 +3,6 @@
 
 BloodBank::BloodBank()
 {
-	donors.emplace_back();
-	donors.emplace_back();
 }
 
 void BloodBank::DisplayAllDonorData() const

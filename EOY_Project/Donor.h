@@ -1,10 +1,10 @@
-#ifndef DONOR_h
+#ifndef DONOR
 #define DONOR_h
 
 #include "Person.h"
 #include "MedicalReport.h"
-#include <iostream>
 #include "donorfilehandler.h"
+#include <iostream>
 
 class Donor : public Person
 {
@@ -19,6 +19,7 @@ private:
 	std::string Address, contactNo;
 	MedicalReport medRep;
 	bool bloodAvailable;
+	donorfilehandler fhandler;
 };
 
 #endif // !DONOR

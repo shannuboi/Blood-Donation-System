@@ -2,7 +2,7 @@
 
 Donor::Donor()
 	:
-	Address("nust"), contactNo("123"), bloodAvailable(true)
+	fhandler("Donor_data")
 {
 }
 

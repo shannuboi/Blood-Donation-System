@@ -64,7 +64,7 @@ void filehandler::delete_record(int ID)
 			row.push_back(word);
 		}
 
-		int row_size = row.size();
+		int row_size = (int)row.size();
 		id1 = std::stoi(row[0]);
 
 		// writing all records,

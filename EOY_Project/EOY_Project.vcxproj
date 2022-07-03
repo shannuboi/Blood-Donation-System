@@ -125,7 +125,6 @@
   <ItemGroup>
     <ClInclude Include="BloodBank.h" />
     <ClInclude Include="BloodType.h" />
-    <ClInclude Include="Database.h" />
     <ClInclude Include="Donor.h" />
     <ClInclude Include="donorfilehandler.h" />
     <ClInclude Include="filehandler.h" />

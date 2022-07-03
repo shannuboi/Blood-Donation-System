@@ -68,5 +68,18 @@ void PatientGUI::Go()
 
 	cout << "\nPlease enter the ID of the Donor you'd like to recieve data from: ";
 	GeneralGUI::GetInput(buffer);
-	dfile.read_record_bysearch(buffer);
+
+	try
+	{
+		string donorName = dfile.GetNameFromID(buffer);
+		if (donorName == "ID not found") throw donorName;
+		cout << "You have chosen " << donorName << "\n";
+		p.AddToFile(buffer);
+		dfile.delete_record(stoi(buffer));
+		cout << "Your data has been added to our database\n";
+	}
+	catch (string error)
+	{
+		cout << error;
+	}
 }

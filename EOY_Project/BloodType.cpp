@@ -8,6 +8,35 @@ BloodType::BloodType(Group group, RHfactor rhfactor)
 {
 }
 
+std::string BloodType::GetString()
+{
+	std::string bloodtype = "";
+
+	switch (group)
+	{
+	case Group::O:
+		bloodtype += "O";
+		break;
+
+	case Group::A:
+		bloodtype += "A";
+		break;
+
+	case Group::B:
+		bloodtype += "B";
+		break;
+
+	case Group::AB:
+		bloodtype += "AB";
+		break;
+	}
+
+	if (rhfactor == RHfactor::plus) bloodtype += "+";
+	else if (rhfactor == RHfactor::minus) bloodtype += "-";
+
+	return bloodtype;
+}
+
 bool BloodType::DonationPossible(BloodType donor, BloodType recp)
 {
 	switch (donor.group)

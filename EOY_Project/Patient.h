@@ -14,4 +14,5 @@ public:
 	void setaddress(std::string a);
 	void setcontactno(std::string c);
     void setdisease(std::string d);
+	void AddToFile(std::string donorID);
 };
