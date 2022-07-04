@@ -7,7 +7,7 @@ bool MedicalReport::weight_check(){
 }
 
 bool MedicalReport::age_check(){
-    return age > 18;
+    return age >= 18;
 }
 
 bool MedicalReport::haemoglobin_level_check(){

@@ -22,7 +22,13 @@ void GeneralGUI::GetInput(char * validChoices, int nChoices, char & storeTo)
 	}
 }
 
-void GeneralGUI::GetInput(std::string&  storeTo)
+void GeneralGUI::GetInput(std::string& storeTo)
+{
+	storeTo = "";
+	getline(cin, storeTo);
+}
+
+void GeneralGUI::GetInput(int & storeTo)
 {
 	std::cin >> storeTo;
 	std::cin.clear();

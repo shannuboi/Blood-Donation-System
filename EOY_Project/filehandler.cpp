@@ -98,5 +98,18 @@ void filehandler::delete_record(int ID)
 
 }
 
+void filehandler::displayAll() const
+{
+	ifstream fin;
+	fin.open(filename);
+	string line;
+	while (getline(fin, line, ','))
+	{
+		if (line == "") break;
+		cout << line << ",";
+	}
+	fin.close();
+}
+
 
 

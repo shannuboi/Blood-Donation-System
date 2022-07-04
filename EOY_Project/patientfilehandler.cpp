@@ -12,7 +12,7 @@ void patientfilehandler ::createpatient(string Pid, string Pname, string Paddres
 fstream foutcreate;
 
 // opens an existing csv file or creates a new file.
-foutcreate.open(filename, ios::out | ios::app);
+foutcreate.open(getfilename(), ios::out | ios::app);
 
     // Insert the data to file
     foutcreate << Pid << ", " 

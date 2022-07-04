@@ -6,7 +6,7 @@ void DonorGUI::Go()
 {
 	string buffer;
 	MedicalReport temp;
-	int _weight, _age, _haem;
+	int numBuffer;
 
 	cout << "Please enter your name: ";
 	GeneralGUI::GetInput(buffer);
@@ -29,25 +29,32 @@ void DonorGUI::Go()
 
 	cout << "Please enter some details about your medical report here\n";
 	cout << "Please enter your age: ";
-	cin >> _age;
-	temp.SetAge(_age);
+	GeneralGUI::GetInput(numBuffer);
+	temp.SetAge(numBuffer);
+
 	cout << "Please enter your body weight: ";
-	cin >> _weight;
-	temp.SetWeight(_weight);
+	GeneralGUI::GetInput(numBuffer);
+	temp.SetWeight(numBuffer);
+
 	cout << "Please enter your haemoglobin level: ";
-	cin >> _haem;
-	temp.SetHaemLev(_haem);
+	GeneralGUI::GetInput(numBuffer);
+	temp.SetHaemLev(numBuffer);
+
 	d.setmedrep(temp);
+
 	if (temp.Eligible()) {
 		cout << "Your medical report has been received. You are eligible to donate blood.\n";
 
 		cout << "Here is the list of Blood Banks you can donate to:\n";
-		//Display blood banks
+		
+		bfile.displayAll();
 
-		cout << "/nEnter the name of the bank you'd like to donot to: ";
+		cout << "\nEnter the name of the bank you'd like to donot to: ";
 		GeneralGUI::GetInput(buffer);
-		cout << "You have chosen" << buffer << "\nYour data will be stored with us. Thank you for donating blood!";
 
+		cout << "You have chosen" << buffer << "\nYour data will be stored with us. Thank you for donating blood!";
+		
+		dfile.createdonor(d.GetName(), d.getaddress(), d.getcontactno(), "_" + d.GetBloodType().GetString() , buffer, d.GetID(), "YES");
 	}
 	else
 	{

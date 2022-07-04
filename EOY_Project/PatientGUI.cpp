@@ -25,7 +25,7 @@ void PatientGUI::Go()
 	GeneralGUI::GetInput(buffer);
 	p.setcontactno(buffer);
 
-	cout << "Please enter any of your deseases: ";
+	cout << "Please enter any of your diseases: ";
 	GeneralGUI::GetInput(buffer);
 	p.setdisease(buffer);
 
@@ -73,7 +73,7 @@ void PatientGUI::Go()
 	{
 		string donorName = dfile.GetNameFromID(buffer);
 		if (donorName == "ID not found") throw donorName;
-		cout << "You have chosen " << donorName << "\n";
+		cout << "You have chosen " << donorName << "\nYou will be contacted further through your contact number for further updates.";
 		p.AddToFile(buffer);
 		dfile.delete_record(stoi(buffer));
 		cout << "Your data has been added to our database\n";

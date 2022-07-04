@@ -1,8 +1,6 @@
 #include "Donor.h"
 
 Donor::Donor()
-	:
-	fhandler("Donor_data")
 {
 }
 
@@ -16,9 +14,19 @@ void Donor::setaddress(std::string a)
 	Address = a;
 }
 
+std::string Donor::getaddress()
+{
+	return Address;
+}
+
 void Donor::setcontactno(std::string c)
 {
 	contactNo = c;
+}
+
+std::string Donor::getcontactno()
+{
+	return contactNo;
 }
 
 void Donor::setmedrep(MedicalReport mr)

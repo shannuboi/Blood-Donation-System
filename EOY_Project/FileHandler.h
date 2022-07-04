@@ -9,15 +9,14 @@
 #include <cstring>
 
 class filehandler{
-public:
     std::string filename;
-
+	
+public:
 void setfilename(std::string name);
-
 std::string getfilename();
 void read_record_bysearch(std::string tofind);
 void delete_record(int ID);
-
+void displayAll() const;
 };
 #endif
 

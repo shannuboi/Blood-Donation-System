@@ -52,11 +52,67 @@ string donorfilehandler::GetNameFromID(string ID)
 				if (line[i] == ',') break;
 				name += line[i];
 			}
-
+			fin.close();
 			return name;
 		}
 	}
+	fin.close();
 	return "ID not found";
 }
 
+vector<string> donorfilehandler::GetIDsofDonorsFromBank(string Bname)
+{
+	vector<string> R;
+	char separator = ',';
+	string row, item;
 
+	ifstream in(getfilename());
+
+	while (getline(in, row))
+	{
+		string CurBname;
+		stringstream ss(row);
+		for (int i = 0; i < 5; i++) getline(ss, CurBname, separator);
+
+
+		if (CurBname == Bname) {
+			stringstream ss(row);
+			getline(ss, item, separator);
+			R.push_back(item);
+		}
+	}
+	in.close();
+	return R;
+}
+
+Donor donorfilehandler::returndonor(string ID)
+{
+	vector<string> R;
+	char separator = ',';
+	string row, item;
+
+	ifstream in(getfilename());
+
+	while (getline(in, row))
+	{
+		string Cid;
+		for (int i = 0; true; i++) {
+			if ((row[i]) == separator)break;
+			Cid += row[i];
+		}
+
+
+		if (Cid == ID) {
+			stringstream ss(row);
+			while (getline(ss, item, separator)) R.push_back(item);
+		}
+	}
+	Donor donor;
+	donor.setID(R[0]);
+	donor.setname(R[1]);
+	donor.setaddress(R[2]);
+	donor.setcontactno(R[3]);
+
+	in.close();
+	return donor;
+}
