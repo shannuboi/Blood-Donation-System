@@ -49,7 +49,7 @@ void DonorGUI::Go()
 		
 		bfile.displayAll();
 
-		cout << "\nEnter the name of the bank you'd like to donot to: ";
+		cout << "\nEnter the name of the bank you'd like to donate to: ";
 		GeneralGUI::GetInput(buffer);
 
 		cout << "You have chosen" << buffer << "\nYour data will be stored with us. Thank you for donating blood!";

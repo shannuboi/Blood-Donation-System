@@ -65,21 +65,25 @@ void PatientGUI::Go()
 	{
 		dfile.read_record_bysearch("_AB-");
 	}
-
-	cout << "\nPlease enter the ID of the Donor you'd like to recieve data from: ";
-	GeneralGUI::GetInput(buffer);
-
-	try
+	
+	while (true)
 	{
-		string donorName = dfile.GetNameFromID(buffer);
-		if (donorName == "ID not found") throw donorName;
-		cout << "You have chosen " << donorName << "\nYou will be contacted further through your contact number for further updates.";
-		p.AddToFile(buffer);
-		dfile.delete_record(stoi(buffer));
-		cout << "Your data has been added to our database\n";
-	}
-	catch (string error)
-	{
-		cout << error;
+		cout << "\nPlease enter the ID of the Donor you'd like to recieve data from: ";
+		GeneralGUI::GetInput(buffer);
+
+		try
+		{
+			string donorName = dfile.GetNameFromID(buffer);
+			if (donorName == "ID not found") throw donorName;
+			cout << "You have chosen " << donorName << "\nYou will be contacted further through your contact number for further updates.";
+			p.AddToFile(buffer);
+			dfile.delete_record(stoi(buffer));
+			cout << "Your data has been added to our database\n";
+			break;
+		}
+		catch (string error)
+		{
+			cout << error;
+		}
 	}
 }
